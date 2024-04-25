@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="logo">BlockShard</div>
         <div className="nav-list">
           <ul className="nav-items">
-            <li>Lund</li>
+            <li>Home</li>
             <li>Features</li>
             <li>Pricing</li>
             <li>Contact Us</li>
