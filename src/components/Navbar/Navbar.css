@@ -1,0 +1,40 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  gap: 30px;
+  margin: 10px;
+  font-family:Outfit;
+  font-size: 24px;
+  font-weight: 450;
+  cursor: pointer;
+}
+
+.logo {
+  margin: 10px;
+  font-family:Outfit;
+  font-size: 24px;
+  font-weight: 5000;
+  cursor: pointer;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+  margin: 10px;
+}
+
+.nav-list .Get-started-btn {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 20px;
+}
