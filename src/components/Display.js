@@ -1,67 +1,50 @@
 import { useState } from "react";
 import Map from "./map";
 import pinList from "../extract";
+
 const Display = ({ contract, account }) => {
   const [data, setData] = useState("");
+
   async function fetchData() {
     try {
-      const pins = await pinList(); // Call the function within an async function
+      const pins = await pinList();
       console.log(pins.rows);
-      const files = pins.rows.map((pin) => {
-        return(
-          <Map pin={pin} />
-        );
-      })
+      const files = pins.rows.map((pin, index) => (
+        <Map key={index} pin={pin} />
+      ));
       setData(files);
-      } catch (error) {
-        console.error('Error fetching pins:', error);
-      }
-    };
-  // const getdata = async () => {
-  //   let dataArray;
-  //   const Otheraddress = document.querySelector(".address").value;
-  //   try {
-  //     if (Otheraddress) {
-  //       dataArray = await contract.display(Otheraddress);
-  //       console.log(dataArray);
-  //     } else {
-  //       dataArray = await contract.display(account);
-  //     }
-  //   } catch (e) {
-  //     console.log(e);
-  //     alert("You don't have access");
-  //   }
-  //   const isEmpty = Object.keys(dataArray).length === 0;
+    } catch (error) {
+      console.error('Error fetching pins:', error);
+    }
+  }
 
-  //   if (!isEmpty) {
-  //     const str = dataArray.toString();
-  //     const str_array = str.split(",");
-  //     // console.log(str);
-  //     // console.log(str_array);
-  //     const images = str_array.map((item, i) => {
-  //       return (
-  //         <a href={item} key={i} target="_blank" rel="noreferrer noopener">
-  //           <img
-  //             key={i}
-  //             src={`https://gateway.pinata.cloud/ipfs/${item.substring(6)}`}
-  //             alt="new"
-  //             className="image-list"
-  //           ></img>
-  //         </a>
-  //       );
-  //     });
-  //     setData(images);
-  //   } else {
-  //     alert("No image to display");
-  //   }
-  
   return (
     <>
-      <div className="flex flex-col justify-center items-center w-[75vw]">{data}</div>
-      <button className="button" onClick={fetchData}>
+      <div className="flex flex-col justify-center items-center w-[75vw]">
+        {data}
+      </div>
+      
+      <button
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "#4CAF50",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+          marginTop: "20px",
+          boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+          transition: "transform 0.2s ease",
+          position:"relative",
+          bottom:"150px",
+          left:"400px"
+        }}
+        onClick={fetchData}
+      >
         Get your data
       </button>
     </>
   );
-}
+};
+
 export default Display;
