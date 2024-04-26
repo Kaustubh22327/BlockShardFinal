@@ -23,8 +23,8 @@ const FileUpload = ({account,provider,contract}) => {
             "Content-Type": "multipart/form-data",
           },
         });
-        // const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
-        // contract.add(account,ImgHash);
+        const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
+        contract.add(ImgHash);
         alert("Successfully Uploaded");
         setFileName("No File selected");
         setFile(null);
@@ -54,7 +54,7 @@ const FileUpload = ({account,provider,contract}) => {
           Select File
         </label>
         <input
-          // disabled={!account}
+           disabled={!account}
           type="file"
           id="file-upload"
           name="data"

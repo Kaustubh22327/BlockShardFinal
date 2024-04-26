@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Map from "./map";
 import pinList from "../extract";
+import './Display.css';
 const Display = ({ contract, account }) => {
   const [data, setData] = useState("");
   async function fetchData() {
@@ -57,10 +58,14 @@ const Display = ({ contract, account }) => {
   
   return (
     <>
-      <div className="flex flex-col justify-center items-center w-[75vw]">{data}</div>
-      <button className="button" onClick={fetchData}>
+      <div className="flex flex-col justify-center items-center w-[75vw] relative right-[90px]">
+      <button className="button-36" onClick={fetchData}>
         Get your data
       </button>
+      <div className="flex flex-col items-center justify-center">{data}
+      </div>
+      </div>
+      
     </>
   );
 }

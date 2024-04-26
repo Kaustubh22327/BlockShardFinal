@@ -33,7 +33,7 @@ const Map = ({ pin }) => {
         <div style={{ fontSize: '14px', color: '#666' }}>Size: {formatFileSize(pin.size)}</div>
         <div style={{ fontSize: '12px', color: '#999' }}>IPFS Hash: {format_pin_hash(pin.ipfs_pin_hash)}</div>
       </div>
-      <button
+      <a href={`https://harlequin-known-gecko-651.mypinata.cloud/ipfs/${pin.ipfs_pin_hash}`}
         style={{
           backgroundColor: '#2874fc',
           color: '#fff',
@@ -46,8 +46,8 @@ const Map = ({ pin }) => {
           alignSelf: 'flex-end',
         }}
       >
-        Copy
-      </button>
+        Open
+      </a>
     </div>
   );
 };
