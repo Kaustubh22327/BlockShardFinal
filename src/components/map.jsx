@@ -18,7 +18,7 @@ const Map = ({ pin }) => {
       style={{
         backgroundColor: '#fff',
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-        borderRadius: '10px',
+        borderRadius: '12px',
         padding: '20px',
         marginBottom: '20px',
         display: 'flex',
