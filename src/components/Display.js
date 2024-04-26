@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Map from "./map";
 import pinList from "../extract";
+import './Display.css';
 
 const Display = ({ contract, account }) => {
   const [data, setData] = useState("");
@@ -43,6 +44,9 @@ const Display = ({ contract, account }) => {
       >
         Get your data
       </button>
+      <div className="flex flex-col items-center justify-center">
+        {data}
+      </div>
     </>
   );
 };

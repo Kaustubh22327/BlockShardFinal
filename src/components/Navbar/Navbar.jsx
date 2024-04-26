@@ -12,7 +12,7 @@ const Navbar = () => {
           <ul className="nav-items">
             <li>Home</li>
             <li>Features</li>
-            <li>Pricing</li>
+            <li>Changes</li>
             <li>Contact Us</li>
           </ul>
           <button className="Get-started-btn">Get Started</button>

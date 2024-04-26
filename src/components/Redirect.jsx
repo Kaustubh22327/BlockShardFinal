@@ -31,11 +31,12 @@ const Redirect = () => {
             setAccount(accounts[0]);
           })
           .catch((error) => {
-            alert("null");
+            alert("Please connect your account");
           });
-        let contractAddress = "0xF58EfDc30F6e8c12f94fa1d41D3ED423AfeE4951";
+        let contractAddress = "0x647Df98999BF89333857Ca1bfF950550623c2687";
         const abi = require("../artifacts/contracts/New.sol/New.json").abi;
         const contract = new provider.eth.Contract(abi, contractAddress);
+        console.log(contract);
         setContract(contract);
         setProvider(provider);
       } else {

@@ -17,8 +17,8 @@ const Map = ({ pin }) => {
     <div
       style={{
         backgroundColor: '#fff',
-        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-        borderRadius: '10px',
+        boxShadow: '2px 4px 10px rgba(0, 0, 0, 0.1)',
+        borderRadius: '12px',
         padding: '20px',
         marginBottom: '20px',
         display: 'flex',
@@ -33,7 +33,7 @@ const Map = ({ pin }) => {
         <div style={{ fontSize: '14px', color: '#666' }}>Size: {formatFileSize(pin.size)}</div>
         <div style={{ fontSize: '12px', color: '#999' }}>IPFS Hash: {format_pin_hash(pin.ipfs_pin_hash)}</div>
       </div>
-      <button
+      <a href={`https://harlequin-known-gecko-651.mypinata.cloud/ipfs/${pin.ipfs_pin_hash}`}
         style={{
           backgroundColor: '#2874fc',
           color: '#fff',
@@ -46,8 +46,8 @@ const Map = ({ pin }) => {
           alignSelf: 'flex-end',
         }}
       >
-        Copy
-      </button>
+        Open
+      </a>
     </div>
   );
 };
