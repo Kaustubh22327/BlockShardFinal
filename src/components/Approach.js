@@ -18,6 +18,9 @@ const Approach = () => {
 
             </div>
             <img src="/approach-world-fhd.b081a60a.png" alt="" />
+                    <img src="/" alt="" />
+
+        
         </div>
     )
 }
