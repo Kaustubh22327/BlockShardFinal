@@ -9,7 +9,7 @@ const Approach = () => {
                     <h3 className='text-white text-bold text-[1.4rem] underline-offset-4'>Our Approach</h3>
                     <div className='h-[0.2rem] w-[5rem] bg-white' />
                 </div>
-                <div className='flex '>
+                <div className='flex'>
                     <div className='text-white w-[30rem] text-[1.3rem]  Outfit'>Blockshard combines powerful, cutting edge technologies such as the cloud, blockchain and cryptography to deliver the first all-in-one cloud storage solution for both businesses and consumers.</div>
                     <div className='text-[1.1rem] text-gray-400 w-[20rem]'>
                         Since all uploaded data is broken into chunks, encrypted and distributed across the IPFS server, deciphering any exposed data would require almost limitless time and resources.
