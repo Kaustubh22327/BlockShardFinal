@@ -4,7 +4,6 @@ Here's a README with emojis added to make it engaging and visually appealing:
 
 # 🚀 BlockShard - Decentralized File Sharing and Storage Platform 🌐
 
-![BlockShard Logo](https://via.placeholder.com/150)  
 *Decentralized, Secure, and Scalable Data Storage Solution Using Blockchain and IPFS*
 
 ## 📜 Table of Contents
