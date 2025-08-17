@@ -1,6 +1,6 @@
 import React from "react";
 
-const Map = ({ pin }) => {
+const Map = ({ pin, onOpenDetails }) => {
   const formatFileSize = (bytes) => {
     if (bytes === 0) return '0 B';
     const k = 1024;
@@ -61,6 +61,9 @@ const Map = ({ pin }) => {
         <a href={link} download style={{
           backgroundColor: '#f5f7f9', color: '#444', border: '1px solid #e2e6ea', padding: '8px 14px', borderRadius: '6px', fontSize: 14, fontWeight: 'bold'
         }}>Download</a>
+        <button onClick={() => onOpenDetails && onOpenDetails(pin)} style={{
+          backgroundColor: '#fff', color: '#135D66', border: '1px solid #d5e6e8', padding: '8px 14px', borderRadius: '6px', fontSize: 14, fontWeight: 'bold', cursor: 'pointer'
+        }}>Details</button>
       </div>
     </div>
   );
