@@ -1,10 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "./Modal.css";
+import toast from "react-hot-toast";
 const Modal = ({ setModalOpen, contract }) => {
+  const dialogRef = useRef(null);
+  const closeButtonRef = useRef(null);
   const sharing = async () => {
     const address = document.querySelector(".address").value;
-    await contract.allow(address);
-    setModalOpen(false);
+    try {
+      await contract.allow(address);
+      toast.success('Access granted');
+      setModalOpen(false);
+    } catch (e) {
+      toast.error('Failed to share');
+    }
   };
   useEffect(() => {
     const accessList = async () => {
@@ -22,11 +30,19 @@ const Modal = ({ setModalOpen, contract }) => {
     };
     contract && accessList();
   }, [contract]);
+  useEffect(() => {
+    closeButtonRef.current && closeButtonRef.current.focus();
+    const onKey = (e) => {
+      if (e.key === 'Escape') setModalOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [setModalOpen]);
   return (
     <>
-      <div className="modalBackground">
-        <div className="modalContainer">
-          <div className="title">Share with</div>
+      <div className="modalBackground" role="dialog" aria-modal="true" aria-labelledby="share-title">
+        <div className="modalContainer" ref={dialogRef}>
+          <div className="title" id="share-title">Share with</div>
           <div className="body">
             <input
               type="text"
@@ -45,6 +61,7 @@ const Modal = ({ setModalOpen, contract }) => {
                 setModalOpen(false);
               }}
               id="cancelBtn"
+              ref={closeButtonRef}
             >
               Cancel
             </button>
