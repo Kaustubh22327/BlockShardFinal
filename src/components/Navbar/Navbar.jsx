@@ -1,8 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-</style>
 const Navbar = () => {
   return (
     <div className="navbar-body">
@@ -10,12 +8,12 @@ const Navbar = () => {
         <div className="logo">BlockShard</div>
         <div className="nav-list">
           <ul className="nav-items">
-            <li>Home</li>
-            <li>Features</li>
-            <li>Changes</li>
-            <li>Contact Us</li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/#features">Features</Link></li>
+            <li><Link to="/#changelog">Changes</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
           </ul>
-          <button className="Get-started-btn">Get Started</button>
+          <Link to="/redirect" className="Get-started-btn">Get Started</Link>
         </div>
       </div>
     </div>

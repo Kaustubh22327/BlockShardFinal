@@ -6,13 +6,18 @@ import Sidebar from "./sidebar";
 import { Link } from "react-router-dom";
 import { Route, Routes } from "react-router";
 import "./Redirect.css";
-import blockimage from "./../components/—Pngtree—network bitcoin technology blockchain big_4034259.png";
 import Modal from "./Modal";
 const Redirect = () => {
   const [account, setAccount] = useState("");
   const [contract, setContract] = useState(null);
   const [provider, setProvider] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const formatAccount = (addr) => {
+    if (!addr) return "Not connected";
+    const start = addr.slice(0, 6);
+    const end = addr.slice(-4);
+    return `${start}...${end}`;
+  };
 
   useEffect(() => {
     const provider = new Web3(window.ethereum);
@@ -46,80 +51,24 @@ const Redirect = () => {
     provider && loadProvider();
   }, []);
   return (
-    <div className="flex items-start">
-      <div className="ml-[17%]">
+    <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <div style={{ width: "100%", maxWidth: 800, padding: "24px 16px" }}>
         {modalOpen && (
           <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
         )}
-        <div className="new">
-          <h1
-            style={{
-              color: "#135D66",
-              marginTop: 0,
-              fontFamily: "sans-serif",
-              fontSize: "50px",
-              right: "230px",
-              position: "relative",
-              fontWeight: 550,
-            }}
-          >
-            BlockShard
-          </h1>
-          <h2
-            className="storage-heading"
-            style={{
-              color: "#135D66",
-              right: "230px",
-              marginTop: 20,
-              fontFamily: "sans-serif",
-              fontSize: 45,
-              textAlign: "left",
-              right: "230px",
-              position: "relative",
-              fontWeight: 550,
-
-            }}
-          >
-            Simplifing File Storage on Blockchain
-          </h2>
-          <p
-            style={{
-              color: "#135D66",
-              right: "230px",
-              marginTop: 20,
-              fontFamily: "sans-serif",
-              fontSize: 26,
-              textAlign: "left",
-              right: "230px",
-              position: "relative",
-              fontWeight: 510,
-
-            }}
-          >
-            From storage to sharing , Blockshard does it all for you
-          </p>
-          <img className="block-img" src={blockimage} alt="" />
-          <div className="bg"></div>
-          <div className="bg bg2"></div>
-          <div className="bg bg3"></div>
+        <div>
 
           <p
             style={{
-              color: "white",
+              color: "#135D66",
               fontFamily: "sans-serif",
-              fontSize: "25px",
-              bottom: "250px",
-              position: "relative",
-              background:"linear-gradient(to right, #8e2de2, #4a00e0)",
-              width: "967px",
-              display: "block",
-              justifyContent: "center",
-              alignItems: "center",
-           
+              fontSize: 14,
+              margin: "12px auto 8px",
+              position: "static",
+              textAlign: "center"
             }}
           >
-              Metamask Account Connection ID :{" "}
-            {account ? account : "Not connected"}
+            Wallet: {formatAccount(account)}
           </p>
           <FileUpload
             account={account}

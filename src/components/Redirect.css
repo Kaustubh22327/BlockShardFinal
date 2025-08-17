@@ -1,7 +1,5 @@
 .block-img{
   width: 400px;
-  position: relative;
-  align-items: left;
-  left:700px;
-  bottom:280px;
+  display: block;
+  margin: 20px 0 16px auto;
 }

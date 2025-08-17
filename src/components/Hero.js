@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar/Navbar';
 import blockimage from "./../components/—Pngtree—network bitcoin technology blockchain big_4034259.png";
+import './Hero.css';
 
 
 const textVariants = {
@@ -30,10 +30,9 @@ const textVariants = {
 
 const Hero = () => {
   return (
-    <div className='hero-container' style={{ height: '600px' }}>
-      <Navbar />
+    <div className='hero-container'>
       <div className='hero-content'>
-        <div style={{ float: 'left', width: '70%' }}>
+        <div className='hero-left'>
           <h1 className='madimi-one-regular text-[3.5rem] font-bold mb-4'>
             From Storage to Sharing<br />We revolutionize<span className='text-[#2874fc]'> Securely</span>
           </h1>
@@ -41,9 +40,16 @@ const Hero = () => {
             Blockshard enables users to store, process, and share their data while ensuring its privacy and security.
           </h3>
           <Link to='/redirect'>
-            <div className='bg-[#2874fc] hover:bg-[#2876fcf1] w-[18rem] flex justify-center cursor-pointer py-2 text-[0.9rem] text-white font-bold mb-6'>
+            <motion.div
+              className='bg-[#2874fc] hover:bg-[#2876fcf1] w-[22rem] flex justify-center items-center cursor-pointer py-3 text-[1.1rem] text-white font-bold mb-6 rounded-lg'
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ type: 'spring', stiffness: 320, damping: 18, delay: 0.1 }}
+              whileHover={{ scale: 1.06, boxShadow: '0 10px 24px rgba(40, 116, 252, 0.35)' }}
+              whileTap={{ scale: 0.98 }}
+            >
               Get Started
-            </div>
+            </motion.div>
           </Link>
           <motion.div className="scroll-img" variants={textVariants} animate="scrollButton">
             <svg className="scroll-img w-[3.5rem] cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -51,8 +57,8 @@ const Hero = () => {
             </svg>
           </motion.div>
         </div>
-        <div style={{ float: 'right', width: '30%' }}>
-          <img src={blockimage} alt="Your Image" style={{ width: '100%' , position:'relative',bottom:'60px'}} />
+        <div className='hero-right'>
+          <img src={blockimage} alt="Illustration" className='hero-img' />
         </div>
       </div>
     </div>

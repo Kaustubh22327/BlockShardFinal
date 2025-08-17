@@ -4,6 +4,45 @@ input[type="file"] {
   display: none;
 }
 
+.dropzone {
+  width: 100%;
+  max-width: 640px;
+  min-height: 140px;
+  border: 2px dashed #9cc0c3;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #135D66;
+  background: #f7fbfc;
+  transition: all 0.2s ease;
+  margin: 10px auto 0 auto;
+}
+
+.dropzone.active {
+  border-color: #135D66;
+  background: #eef7f8;
+  box-shadow: rgba(19,93,102,0.25) 0 6px 18px;
+}
+
+.dropzone-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.fileMeta {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.previewImg {
+  margin-top: 10px;
+  max-height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .choose {
   background-color: #135D66;/* Updated button color */
   border: none;
@@ -15,18 +54,12 @@ input[type="file"] {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin: 15px;
-  position: relative;
-  bottom: 200px;
-  right: 100px;
 }
 .choose:hover {
   box-shadow: rgba(202, 61, 0, 0.5) 0 3px 8px;
 }
 .textArea {
   color: black  ;
-  bottom:200px;
-  position: relative;
-  right: 100px;
   font-size: 24px;
   font-family: Outfit;
   font-weight:600;
@@ -43,9 +76,6 @@ input[type="file"] {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin: 15px;
-  position: relative;
-  bottom:200px;
-  right: 100px;
 }
 
 .upload:hover {
@@ -59,13 +89,16 @@ input[type="file"] {
   color:grey;
 }
 
-div {
-  padding: 5px 10px;
-}
+/* Removed global div padding to avoid layout shifts */
 .top{
   justify-content: center;
   align-items: center;
   display: flex;
-  right: 200px;
-  
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

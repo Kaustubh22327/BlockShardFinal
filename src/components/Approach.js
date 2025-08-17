@@ -2,7 +2,7 @@ import React from 'react'
 
 const Approach = () => {
     return (
-        <div className="bg-[#001552] flex  justify-around ">
+        <div className="bg-[#001552] flex  justify-around " id='changelog'>
             <div className='flex flex-col justify-center gap-[2rem]'>
                 <div className='flex flex-col gap-[0.2rem]  '>
 

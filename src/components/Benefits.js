@@ -1,7 +1,7 @@
 import React from 'react'
 const Benefits = () => {
     return (
-        <div className='mt-[2rem] flex flex-col'>
+        <div className='mt-[2rem] flex flex-col' id='features'>
             <div className='flex flex-col gap-[0.2rem] px-[4rem] '>
 
                 <h3 className='text-bold text-[1.4rem] underline-offset-4'>Our Benefits</h3>
